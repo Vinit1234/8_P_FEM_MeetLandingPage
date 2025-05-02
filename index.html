@@ -10,8 +10,9 @@
       sizes="32x32"
       href="./assets/favicon-32x32.png"
     >
-
     <title>Frontend Mentor | Meet landing page</title>
+
+    <link rel="stylesheet" href="sass/styles.scss">
   </head>
   <body>
     <header>
@@ -26,13 +27,13 @@
       <section class="hero">
         <img src="assets/desktop/image-hero-left.png" alt="" loading="lazy" >
         <img src="assets/desktop/image-hero-right.png" alt="" loading="lazy" >
-        <h2>Group Chat for Everyone</h2>
-        <p>
+        <h2 class="hero__heading">Group Chat for Everyone</h2>
+        <p class="hero__title">
           Meet makes it easy to connect with others face-to-face virtually and
           collaborate across any device.
         </p>
-        <button type="button">Download <span>v1.3</span></button>
-        <button type="button">What is it?</button>
+        <button type="button" class="btn--primary">Download <span>v1.3</span></button>
+        <button type="button" class="btn--secondary">What is it?</button>
       </section>
 
       <section class="main-content">
@@ -68,9 +69,9 @@
             >
           </figure>
         </div>
-        <div class="main_content__text_content">
-          <p>Built for modern use</p>
-          <h3>Smarter meetings, all in one place</h3>
+        <div class="main-content__text">
+          <p class="main-content__text__highlight">Built for modern use</p>
+          <h3 class="main-content__text__heading">Smarter meetings, all in one place</h3>
           <p>
             Send messages, share files, show your screen, and record your
             meetings — all in one workspace. Control who can join with
@@ -80,16 +81,21 @@
       </section>
     </main>
 
-    <footer>
+    <footer class="cta">
       <div class="vertical-line"></div>
       <div class="circled-number">02</div>
-      <section class="footer__content">
-        <h3>Experience more together</h3>
-        <p>
+      <section class="cta__content">
+        <img src="./assets/mobile/image-footer.jpg" alt="" class="cta__content__image" srcset="
+          ./assets/mobile/image-footer.jpg   750w,
+          ./assets/tablet/image-footer.jpg   768w,
+          ./assets/desktop/image-footer.jpg 1440w
+        " sizes="100vw">
+        <h3 class="cta__content__heading">Experience more together</h3>
+        <p class="cta__content__description">
           Stay connected with reliable HD meetings and unlimited one-on-one and
           group video sessions.
         </p>
-        <button type="button">Download <span>v1.3</span></button>
+        <button type="button" class="cta__content__btn btn--secondary">Download <span>v1.3</span></button>
       </section>
     </footer>
 
