@@ -120,7 +120,8 @@ body{
 
 .hero__heading,
 .main-content__text__heading,
-.cta__content__heading{
+.cta__content__heading,
+.circled-number{
     font-weight: 900;
 }
 
@@ -140,6 +141,7 @@ body{
 .main-content__text__highlight {
     letter-spacing: 0.2rem;
     text-transform: uppercase;
+    // font-weight: 900; --update it
     font-weight: 700;
     // 12px to 16px
     // font-size: 0.75rem;
@@ -156,13 +158,14 @@ body{
   }
 
 //   ===========================================
+// Navigaion ============================
 .nav{
     list-style-type: none;
     margin-bottom: 2rem;
     padding: 0;
 }
 
-
+// Hero Section ====================
 .hero{
     &__img--left{
         grid-area: one;
@@ -194,6 +197,8 @@ body{
     margin: 0 auto;
 }
 
+
+// Common utilites ===================
 .btn{
     border: none;
     padding: 1rem 2rem;
@@ -207,4 +212,76 @@ body{
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+}
+// ===================================
+section{
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+
+// Main-content section
+.vertical-line{
+    height: 100px;
+    width: 0px;
+    margin: 0 auto;
+}
+
+.circled-number{
+    padding: 1rem;
+    border-radius: 50%;
+    width: 4rem;
+    //  margin: 0 auto 1rem;
+}
+
+.vertical-line, 
+.circled-number{
+    border: 1px solid var(--slate-300);
+    margin: 0 auto;
+}
+
+// .circled-number{
+//     margin: 0 auto 1rem;
+// }
+
+.main-content__image-collage{
+    padding: 3rem 0;
+    figure{
+        margin: 0;
+        padding: 0;
+        img{
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+    }  
+}
+
+.main-content__image-collage{
+    & figure:nth-child(1){
+        grid-area:"one"
+    }
+    & figure:nth-child(2){
+        grid-area:"two"
+    }
+    & figure:nth-child(3){
+        grid-area:"three"
+    }
+    & figure:nth-child(4){
+        grid-area:"four"
+    }
+}
+
+.main-content__image-collage{
+    display: grid;
+    grid-template-areas: "one two"
+                         "three four";
+    gap:1rem;
+    justify-content: center;
+}
+
+.main-content{
+    &__text__heading, &__text__highlight{
+        margin-top: 0;
+    }
 }
