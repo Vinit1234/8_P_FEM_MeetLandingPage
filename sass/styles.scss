@@ -50,10 +50,10 @@
     &__text__highlight{
         color: var(--cyan-600);
     }
-    &__text_heading{
+    &__text__heading{
         color: var(--slate-900);
     }
-    > p{
+    &__text__description{
         color: var(--slate-600);
     }
 }
