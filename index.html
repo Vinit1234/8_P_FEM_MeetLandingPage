@@ -17,7 +17,7 @@
   <body>
     <header>
       <nav>
-        <ul>
+        <ul class="nav">
           <li><img src="assets/logo.svg" alt="logo for meet" ></li>
         </ul>
       </nav>
@@ -25,15 +25,19 @@
 
     <main>
       <section class="hero">
-        <img src="assets/desktop/image-hero-left.png" alt="" loading="lazy" >
-        <img src="assets/desktop/image-hero-right.png" alt="" loading="lazy" >
-        <h2 class="hero__heading">Group Chat for Everyone</h2>
-        <p class="hero__title">
-          Meet makes it easy to connect with others face-to-face virtually and
-          collaborate across any device.
-        </p>
-        <button type="button" class="btn--primary">Download <span>v1.3</span></button>
-        <button type="button" class="btn--secondary">What is it?</button>
+        <img class="hero__img--left" src="assets/desktop/image-hero-left.png" alt="" loading="lazy" >
+        <img class="hero__img--rt" src="assets/desktop/image-hero-right.png" alt="" loading="lazy" >
+        <div class="hero-container">
+          <h2 class="hero__heading">Group Chat <br> for Everyone</h2>
+          <p class="hero__title">
+            Meet makes it easy to connect with others face-to-face virtually and
+            collaborate across any device.
+          </p>
+          <div class="btn-box">
+            <button type="button" class="btn btn--primary">Download <span>v1.3</span></button>
+            <button type="button" class="btn btn--secondary">What is it?</button>
+          </div>
+        </div>
       </section>
 
       <section class="main-content">
@@ -95,7 +99,7 @@
           Stay connected with reliable HD meetings and unlimited one-on-one and
           group video sessions.
         </p>
-        <button type="button" class="cta__content__btn btn--secondary">Download <span>v1.3</span></button>
+        <button type="button" class="btn btn--secondary">Download <span>v1.3</span></button>
       </section>
     </footer>
 

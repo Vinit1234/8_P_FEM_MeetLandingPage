@@ -154,3 +154,57 @@ body{
     // 16px to 18px
     font-size: clamp(1rem, calc(1rem + 2 * ((100vw - 480px) / (1024 - 480))),1.125rem);
   }
+
+//   ===========================================
+.nav{
+    list-style-type: none;
+    margin-bottom: 2rem;
+    padding: 0;
+}
+
+
+.hero{
+    &__img--left{
+        grid-area: one;
+        justify-self: right;
+    }
+    &__img--rt{
+        grid-area: two;
+        justify-self: left;
+    }
+    &-container{
+        grid-area: three;
+    }
+}
+
+.hero{
+    display: grid;
+    grid-template-areas: "one two"
+                         "three three";
+    
+}
+
+.hero__img--left,
+.hero__img--rt{ 
+    max-width: 120%;
+    overflow: hidden;
+}
+
+.hero-container{
+    margin: 0 auto;
+}
+
+.btn{
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    // max-width: 200px;
+    max-width: 12.5rem;
+}
+
+.btn-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
