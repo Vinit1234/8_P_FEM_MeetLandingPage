@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
 :root{
     --cyan-600: #4D96A9;
     --cyan-300: #8FE3F9;
@@ -7,7 +10,7 @@
     --slate-600: #87879D;
     --slate-300:#D1D1DF;
     --white: #FAFAFA;
-
+    --base-font: "Red Hat Display", sans-serif;
 }
 
 *{
@@ -15,7 +18,7 @@
 }
 
 // ===========================================
-// Color scheme
+// Color scheme  Pending: main-content headings - slate-900; p - slate-600
 
 .hero{
     &__heading{
@@ -103,3 +106,52 @@
 }
 
 
+// Typography ======================================
+@mixin base_font(){
+    font-family: var(--base-font);
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    @include base_font();
+    text-align: center  ;
+    // 16px to 18px
+}
+
+.hero__heading,
+.main-content__text__heading,
+.cta__content__heading{
+    font-weight: 900;
+}
+
+.hero__heading{
+    // 40px to 64px
+    // font-size: 2.5rem;
+    font-size: clamp(2.5rem, calc(2rem + 32 * ((100vw - 480px) / (1024 - 480))),4rem);
+}
+
+.main-content__text__heading,
+.cta__content__heading{
+    // 32px to 40px
+    // font-size: 2rem;
+    font-size: clamp(2rem, calc(2rem + 16 * ((100vw - 480px) / (1024 - 480))),2.5rem);
+}
+
+.main-content__text__highlight {
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    // 12px to 16px
+    // font-size: 0.75rem;
+    font-size: clamp(0.75rem, calc(0.75rem + 4 * ((100vw - 480px) / (1024 - 480))),1rem);
+  }
+
+  .hero__title,
+  .main-content__text__description,
+  .cta__content__description,
+  .btn--primary,
+  .btn--secondary{
+    // 16px to 18px
+    font-size: clamp(1rem, calc(1rem + 2 * ((100vw - 480px) / (1024 - 480))),1.125rem);
+  }
