@@ -285,3 +285,19 @@ section{
         margin-top: 0;
     }
 }
+
+// Footer (cta) =============================
+.cta {
+    position: relative;
+
+    .vertical-line, .circled-number {
+      position: relative;
+      top: 25px;
+      z-index: 1;
+    }
+    .circled-number {
+        background: white;
+
+    }
+  }
+    
