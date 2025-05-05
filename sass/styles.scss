@@ -207,7 +207,7 @@ body{
     max-width: 12.5rem;
 }
 
-.flex-box{
+.container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -303,7 +303,7 @@ section{
     
 @media screen and (min-width: 480px) {
     .hero{
-        .flex-box{
+        .container{
             flex-direction: row;
             justify-content: center;
         }
@@ -316,8 +316,19 @@ section{
     {
         max-width: 480px;
     }
+
+    .cta__content__heading{
+        margin-bottom: 0;
+    }
     .main-content__text{
         margin: 0 auto;
     }
 }
+
+// @media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
+        .main-content__image-collage{
+            grid-template-areas: "one two three four";
+        }
+    }
 
