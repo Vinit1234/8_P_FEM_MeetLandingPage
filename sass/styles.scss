@@ -325,6 +325,7 @@ section{
     }
 }
 
+// Responsiveness for mid-sized screens like tablets
 // @media screen and (min-width: 768px) {
 @media screen and (min-width: 600px) {
         .main-content__image-collage{
@@ -332,3 +333,41 @@ section{
         }
     }
 
+// Responsiveness for large-sized screens like desktops
+@media screen and (min-width:1100px) {
+    .hero{
+        grid-template-areas: "one three two";  
+
+        &__img--rt, &__img--left{
+            width: 110%;
+        }
+    }
+
+    .main-content__image-collage{
+        padding-left: 5rem;
+        padding-right: 5rem ;
+    }
+
+    .cta__content{
+        &__heading{
+            grid-area: "cta-one";
+        }
+
+        &__description{
+            grid-area: "cta-two";
+        }
+        &__btn{
+            grid-area: "cta-three";
+        }
+
+    }
+
+    .cta__content{
+        padding:6rem;
+        text-align: initial;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "cta-one cta-two cta-three";
+        justify-items: center;
+    }
+}
