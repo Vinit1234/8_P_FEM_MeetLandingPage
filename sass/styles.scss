@@ -21,7 +21,7 @@ body{
 }
 
 // ===========================================
-// Color scheme  Pending: main-content headings - slate-900; p - slate-600
+// Color scheme
 
 .hero{
     &__heading{
@@ -308,7 +308,8 @@ section:last-of-type{
 
     }
   }
-    
+
+// Responsiveness for small-sized screens like mobiles
 @media screen and (min-width: 480px) {
     .hero{
         .container{
