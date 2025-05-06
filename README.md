@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://your-solution-url.com)
-- [Live site URL](https://your-live-site-url.com)
+- [Solution URL](https://github.com/Vinit1234/8_P_FEM_MeetLandingPage)
+- [Live site URL](https://8-p-fem-meet-landing-page.vercel.app/)
 
 ## My process
 
