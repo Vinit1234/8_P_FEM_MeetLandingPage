@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root{
+    --cyan-600: #4D96A9;
+    --cyan-300: #8FE3F9;
+    --purple-600: #855FB1;
+    --purple-300: #D9B8FF;
+    --slate-900: #282838;
+    --slate-600: #87879D;
+    --slate-300:#D1D1DF;
+    --white: #FAFAFA;
+    --base-font: "Red Hat Display", sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+// ===========================================
+// Color scheme
+
+.hero{
+    &__heading{
+        color:var(--slate-900);
+    }
+    &__title{
+        color: var(--slate-600);
+    }
+
+}
+
+.btn--primary{
+    background-color: var(--cyan-600);
+    color: var(--white);
+    > span{
+        color: var(--cyan-300);
+    }
+}
+
+.btn--secondary{
+    background-color: var(--purple-600);
+    color: var(--white);
+    > span{
+        color: var(--purple-300);
+    }
+}
+
+.main-content{
+    &__text__highlight{
+        color: var(--cyan-600);
+    }
+    &__text__heading{
+        color: var(--slate-900);
+    }
+    &__text__description{
+        color: var(--slate-600);
+    }
+}
+
+.circled-number{
+    color: var(--slate-600);
+}
+
+/* .cta__content {
+    background-image: linear-gradient(hsla(192, 39%, 48%, 0.9), 
+                                      hsla(192, 39%, 48%, 0.9)),  
+                                      url("./assets/tablet/image-footer.jpg");
+    background-position: center;
+    background-size: cover;
+    padding: 4rem 2rem 4rem;
+} */
+
+// Set color and background image to footer (ie, cta)
+.cta{
+
+    &__content{
+        color: var(--white);
+        position: relative;
+
+        &__image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+          }
+          &::after{
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background-color: var(--cyan-600);
+              opacity: 0.85;
+              z-index: 0;
+          }
+          &__heading, &__description , &__btn{
+            position: relative;
+            z-index: 1;
+          }
+    }
+}
+
+
+// Typography ======================================
+@mixin base_font(){
+    font-family: var(--base-font);
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    @include base_font();
+    text-align: center  ;
+    // 16px to 18px
+}
+
+.hero__heading,
+.main-content__text__heading,
+.cta__content__heading,
+.circled-number{
+    font-weight: 900;
+}
+
+.hero__heading{
+    // 40px to 64px
+    // font-size: 2.5rem;
+    font-size: clamp(2.5rem, calc(2rem + 32 * ((100vw - 480px) / (1024 - 480))),4rem);
+}
+
+.main-content__text__heading,
+.cta__content__heading{
+    // 32px to 40px
+    // font-size: 2rem;
+    font-size: clamp(2rem, calc(2rem + 16 * ((100vw - 480px) / (1024 - 480))),2.5rem);
+}
+
+.main-content__text__highlight {
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    // font-weight: 900; --update it
+    font-weight: 700;
+    // 12px to 16px
+    // font-size: 0.75rem;
+    font-size: clamp(0.75rem, calc(0.75rem + 4 * ((100vw - 480px) / (1024 - 480))),1rem);
+  }
+
+  .hero__title,
+  .main-content__text__description,
+  .cta__content__description,
+  .btn--primary,
+  .btn--secondary{
+    // 16px to 18px
+    font-size: clamp(1rem, calc(1rem + 2 * ((100vw - 480px) / (1024 - 480))),1.125rem);
+  }
+
+//   ===========================================
+// Navigaion ============================
+.nav{
+    list-style-type: none;
+    margin-bottom: 2rem;
+    padding: 0;
+}
+
+// Hero Section ====================
+.hero{
+    &__img--left{
+        grid-area: one;
+        justify-self: right;
+    }
+    &__img--rt{
+        grid-area: two;
+        justify-self: left;
+    }
+    &-container{
+        grid-area: three;
+    }
+}
+
+.hero{
+    display: grid;
+    grid-template-areas: "one two"
+                         "three three";
+    
+}
+
+.hero__img--left,
+.hero__img--rt{ 
+    max-width: 120%;
+    overflow: hidden;
+}
+
+.hero-container{
+    margin: 0 auto;
+}
+
+
+// Common utilites ===================
+.btn{
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    // max-width: 200px;
+    max-width: 12.5rem;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+// ===================================
+section{
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+section:last-of-type{
+    margin-bottom:0;
+}
+
+
+// Main-content section
+.vertical-line{
+    height: 100px;
+    width: 0px;
+    margin: 0 auto;
+}
+
+.circled-number{
+    padding: 1rem;
+    border-radius: 50%;
+    width: 4rem;
+    //  margin: 0 auto 1rem;
+}
+
+.vertical-line, 
+.circled-number{
+    border: 1px solid var(--slate-300);
+    margin: 0 auto;
+}
+
+// .circled-number{
+//     margin: 0 auto 1rem;
+// }
+
+.main-content__image-collage{
+    padding: 3rem 0;
+    figure{
+        margin: 0;
+        padding: 0;
+        img{
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+    }  
+}
+
+.main-content__image-collage{
+    & figure:nth-child(1){
+        grid-area:"one"
+    }
+    & figure:nth-child(2){
+        grid-area:"two"
+    }
+    & figure:nth-child(3){
+        grid-area:"three"
+    }
+    & figure:nth-child(4){
+        grid-area:"four"
+    }
+}
+
+.main-content__image-collage{
+    display: grid;
+    grid-template-areas: "one two"
+                         "three four";
+    gap:1rem;
+    justify-content: center;
+}
+
+.main-content{
+    &__text__heading, &__text__highlight{
+        margin-top: 0;
+    }
+}
+
+// Footer (cta) =============================
+.cta {
+    position: relative;
+
+    .vertical-line, .circled-number {
+      position: relative;
+      top: 25px;
+      z-index: 1;
+    }
+    .circled-number {
+        background: white;
+
+    }
+  }
+
+// Responsiveness for small-sized screens like mobiles
+@media screen and (min-width: 480px) {
+    .hero{
+        .container{
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+
+    .hero-container,
+    .main-content__text,
+    .cta__content__heading,
+    .cta__content__description
+    {
+        max-width: 480px;
+    }
+
+    .cta__content__heading{
+        margin-bottom: 0;
+    }
+    .main-content__text{
+        margin: 0 auto;
+    }
+}
+
+// Responsiveness for mid-sized screens like tablets
+// @media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
+        .main-content__image-collage{
+            grid-template-areas: "one two three four";
+        }
+    }
+
+// Responsiveness for large-sized screens like desktops
+@media screen and (min-width:1100px) {
+    .hero{
+        grid-template-areas: "one three two";  
+
+        &__img--rt, &__img--left{
+            width: 110%;
+        }
+    }
+
+    .main-content__image-collage{
+        padding-left: 5rem;
+        padding-right: 5rem ;
+    }
+
+    .cta__content{
+        &__heading{
+            grid-area: "cta-one";
+        }
+
+        &__description{
+            grid-area: "cta-two";
+        }
+        &__btn{
+            grid-area: "cta-three";
+        }
+
+    }
+
+    .cta__content{
+        padding:6rem;
+        text-align: initial;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "cta-one cta-two cta-three";
+        justify-items: center;
+    }
+}
