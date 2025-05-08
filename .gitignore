@@ -22,5 +22,3 @@
 node_modules
 .parcel-cache
 dev
-package.json
-package-lock.json

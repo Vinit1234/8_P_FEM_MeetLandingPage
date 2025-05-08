@@ -1,0 +1,30 @@
+{
+  "name": "8_p_fem_meetlandingpage",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel .\\index.html --dist-dir dev --no-source-maps",
+    "lint:scss": "stylelint '**/*.scss' --allow-empty-input"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vinit1234/8_P_FEM_MeetLandingPage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Vinit1234/8_P_FEM_MeetLandingPage/issues"
+  },
+  "homepage": "https://github.com/Vinit1234/8_P_FEM_MeetLandingPage#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.14.4",
+    "parcel": "^2.14.4",
+    "sass": "^1.87.0",
+    "stylelint": "^16.19.1",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-scss": "^6.12.0"
+  }
+}
