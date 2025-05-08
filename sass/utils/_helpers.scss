@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .btn {
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    max-width: 12.5rem;
+  
+    &--primary {
+      background-color: var(--cyan-600);
+      color: var(--white);
+  
+      > span {
+        color: var(--cyan-300);
+      }
+    }
+  
+    &--secondary {
+      background-color: var(--purple-600);
+      color: var(--white);
+  
+      > span {
+        color: var(--purple-300);
+      }
+    }
+  }
+  
+  .nav {
+    list-style: none;
+    margin: 2rem 0;
+    padding: 0;
+  }

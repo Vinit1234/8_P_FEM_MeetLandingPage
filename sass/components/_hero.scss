@@ -1,0 +1,33 @@
+.hero {
+    display: grid;
+    grid-template-areas:
+      "one two"
+      "three three";
+  
+    &__img--left {
+      grid-area: one;
+      justify-self: end;
+      max-width: 120%;
+      overflow: hidden;
+    }
+  
+    &__img--rt {
+      grid-area: two;
+      justify-self: start;
+      max-width: 120%;
+      overflow: hidden;
+    }
+  
+    &-container {
+      grid-area: three;
+      margin: 0 auto;
+    }
+  
+    &__heading {
+      color: var(--slate-900);
+    }
+  
+    &__title {
+      color: var(--slate-600);
+    }
+  }

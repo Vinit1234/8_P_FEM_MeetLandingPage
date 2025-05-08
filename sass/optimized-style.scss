@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+  --cyan-600: #4D96A9;
+  --cyan-300: #8FE3F9;
+  --purple-600: #855FB1;
+  --purple-300: #D9B8FF;
+  --slate-900: #282838;
+  --slate-600: #87879D;
+  --slate-300: #D1D1DF;
+  --white: #FAFAFA;
+  --base-font: "Red Hat Display", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  margin: 0; 
+}
+
+/* 
+ # Key Optimizations Made: 
+
+1. Grouped repetitive selectors like .btn--primary and .btn--secondary.
+2. Avoided deep nesting where unnecessary to reduce CSS specificity and simplify debugging.
+3. Used mixins and variables strategically, avoiding overengineering.
+4. Merged multiple .main-content__image-collage definitions into one.
+5. Streamlined media queries for maintainability.
+
+*/
+
+// ================= Typography =================
+@mixin base-font {
+  font-family: var(--base-font);
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  @include base-font;
+  text-align: center;
+}
+
+.hero__heading,
+.main-content__text__heading,
+.cta__content__heading,
+.circled-number {
+  font-weight: 900;
+}
+
+.hero__heading {
+  font-size: clamp(2.5rem, calc(2rem + 32 * ((100vw - 480px) / (1024 - 480))), 4rem);
+}
+
+.main-content__text__heading,
+.cta__content__heading {
+  font-size: clamp(2rem, calc(2rem + 16 * ((100vw - 480px) / (1024 - 480))), 2.5rem);
+}
+
+.main-content__text__highlight {
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: clamp(0.75rem, calc(0.75rem + 4 * ((100vw - 480px) / (1024 - 480))), 1rem);
+}
+
+.hero__title,
+.main-content__text__description,
+.cta__content__description,
+.btn--primary,
+.btn--secondary {
+  font-size: clamp(1rem, calc(1rem + 2 * ((100vw - 480px) / (1024 - 480))), 1.125rem);
+}
+
+// =============== Utility Classes ==============
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn {
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  max-width: 12.5rem;
+
+  &--primary {
+    background-color: var(--cyan-600);
+    color: var(--white);
+
+    > span {
+      color: var(--cyan-300);
+    }
+  }
+
+  &--secondary {
+    background-color: var(--purple-600);
+    color: var(--white);
+
+    > span {
+      color: var(--purple-300);
+    }
+  }
+}
+
+.nav {
+  list-style: none;
+  margin: 2rem 0;
+  padding: 0;
+}
+
+// ================ Hero Section ================
+.hero {
+  display: grid;
+  grid-template-areas:
+    "one two"
+    "three three";
+
+  &__img--left {
+    grid-area: one;
+    justify-self: end;
+    max-width: 120%;
+    overflow: hidden;
+  }
+
+  &__img--rt {
+    grid-area: two;
+    justify-self: start;
+    max-width: 120%;
+    overflow: hidden;
+  }
+
+  &-container {
+    grid-area: three;
+    margin: 0 auto;
+  }
+
+  &__heading {
+    color: var(--slate-900);
+  }
+
+  &__title {
+    color: var(--slate-600);
+  }
+}
+
+// ================ Main Content ================
+.main-content {
+  &__text__highlight {
+    color: var(--cyan-600);
+    margin-top: 0;
+  }
+
+  &__text__heading {
+    color: var(--slate-900);
+    margin-top: 0;
+  }
+
+  &__text__description {
+    color: var(--slate-600);
+  }
+
+  &__image-collage {
+    display: grid;
+    grid-template-areas:
+      "one two"
+      "three four";
+    gap: 1rem;
+    justify-content: center;
+    padding: 3rem 0;
+
+    figure {
+      margin: 0;
+      padding: 0;
+
+      img {
+        max-width: 100%;
+        object-fit: cover;
+        border-radius: 1rem;
+      }
+
+      &:nth-child(1) { grid-area: one; }
+      &:nth-child(2) { grid-area: two; }
+      &:nth-child(3) { grid-area: three; }
+      &:nth-child(4) { grid-area: four; }
+    }
+  }
+}
+
+// ================ CTA Section =================
+.cta {
+  position: relative;
+
+  .vertical-line,
+  .circled-number {
+    position: relative;
+    top: 25px;
+    z-index: 1;
+  }
+
+  .circled-number {
+    background: white;
+  }
+
+  
+    &__content {
+    color: var(--white);
+    position: relative;
+    padding: 3rem;
+    text-align: initial;
+    .container{
+      margin: 0 auto;
+      display: grid;
+      text-align: center;
+      justify-items: center;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--cyan-600);
+      opacity: 0.85;
+      z-index: 0;
+    }
+
+    &__image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    &__heading,
+    &__description,
+    &__btn {
+      position: relative;
+      z-index: 1;
+    }
+
+    // &__heading { grid-area: cta-one; }
+    // &__description { grid-area: cta-two; }
+    // &__btn { grid-area: cta-three; }
+  }
+}
+
+// ================ Common Elements ===============
+section {
+  padding: 1rem;
+}
+
+section:not(:last-of-type){
+  margin-bottom: 1rem;
+}
+
+.vertical-line,
+.circled-number {
+  border: 1px solid var(--slate-300);
+  margin: 0 auto;
+}
+
+.vertical-line{
+  height: 100px;
+  width: 0px;
+}
+
+.circled-number {
+  padding: 1rem;
+  border-radius: 50%;
+  width: 4rem;
+  color: var(--slate-600);
+}
+
+// ================ Responsive ====================
+@media screen and (min-width: 480px) {
+  .hero .container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+/*   .hero-container,
+  .main-content__text,
+  .cta__content__heading,
+  .cta__content__description {
+    max-width: 480px;
+  } */
+  .hero-container,
+  .main-content__text,
+  .cta .container {
+    max-width: min(558px,75%);
+  }
+
+  .cta__content__heading {
+    margin-bottom: 0;
+  }
+
+  .main-content__text {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .main-content__image-collage {
+    grid-template-areas: "one two three four";
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .hero {
+    grid-template-areas: "one three two";
+  }
+
+  .cta__content{
+    padding: 6rem 3rem;
+    
+    .container{
+      max-width: 80%;
+      grid-template-areas:  "cta-one cta-two cta-three";
+    }
+   
+    &__heading { 
+      grid-area: cta-one; 
+      margin-top: 0px;  
+    }
+
+    &__description { grid-area: cta-two; }
+    &__btn { grid-area: cta-three; }
+    
+    &__heading,&__description{
+      text-align: justify;
+      max-width: 300px;
+    }
+  }
+}

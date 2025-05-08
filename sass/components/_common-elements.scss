@@ -1,0 +1,25 @@
+section {
+    padding: 1rem;
+  }
+  
+  section:not(:last-of-type){
+    margin-bottom: 1rem;
+  }
+  
+  .vertical-line,
+  .circled-number {
+    border: 1px solid var(--slate-300);
+    margin: 0 auto;
+  }
+  
+  .vertical-line{
+    height: 100px;
+    width: 0px;
+  }
+  
+  .circled-number {
+    padding: 1rem;
+    border-radius: 50%;
+    width: 4rem;
+    color: var(--slate-600);
+  }

@@ -1,0 +1,17 @@
+@use '../abstracts/mixins';
+@use '../abstracts/variables';
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  body{
+    @include mixins.base-font;
+    margin: 0; 
+    text-align: center;
+  }

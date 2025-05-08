@@ -1,0 +1,30 @@
+.hero__heading,
+.main-content__text__heading,
+.cta__content__heading,
+.circled-number {
+  font-weight: 900;
+}
+
+.hero__heading {
+  font-size: clamp(2.5rem, calc(2rem + 32 * ((100vw - 480px) / (1024 - 480))), 4rem);
+}
+
+.main-content__text__heading,
+.cta__content__heading {
+  font-size: clamp(2rem, calc(2rem + 16 * ((100vw - 480px) / (1024 - 480))), 2.5rem);
+}
+
+.main-content__text__highlight {
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: clamp(0.75rem, calc(0.75rem + 4 * ((100vw - 480px) / (1024 - 480))), 1rem);
+}
+
+.hero__title,
+.main-content__text__description,
+.cta__content__description,
+.btn--primary,
+.btn--secondary {
+  font-size: clamp(1rem, calc(1rem + 2 * ((100vw - 480px) / (1024 - 480))), 1.125rem);
+}

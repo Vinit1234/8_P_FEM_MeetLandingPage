@@ -13,7 +13,12 @@
     <title>Frontend Mentor | Meet landing page</title>
 
     <!-- <link rel="stylesheet" href="sass/styles.scss"> -->
-     <link rel="stylesheet" href="css/styles.css">
+    <!-- <link rel="stylesheet" href="css/styles.css"> -->
+    <!-- <link rel="stylesheet" href="sass/optimized-style.scss"> -->
+    <!-- <link rel="stylesheet" href="css/optimized-styles-1.css"> -->
+    <!-- <link rel="stylesheet" href="sass/main.scss"> -->
+    <link rel="stylesheet" href="css/main.css">
+
   </head>
   <body>
     <header>
@@ -89,6 +94,29 @@
     <footer class="cta">
       <div class="vertical-line"></div>
       <div class="circled-number">02</div>
+      <section class="cta__content">
+        <img src="./assets/mobile/image-footer.jpg" alt="" class="cta__content__image" srcset="
+          ./assets/mobile/image-footer.jpg   750w,
+          ./assets/tablet/image-footer.jpg   768w,
+          ./assets/desktop/image-footer.jpg 1440w
+        " sizes="100vw">
+
+        <div class="container">
+          <h3 class="cta__content__heading">Experience more together</h3>
+          <p class="cta__content__description">
+            Stay connected with reliable HD meetings and unlimited one-on-one and
+            group video sessions.
+          </p>
+          <button type="button" class="btn btn--secondary cta__content__btn">Download <span>v1.3</span></button>
+        </div>
+      </section>
+    </footer>
+
+    <!-- //Less optimized version (uncomment for styles.css)
+    
+    <footer class="cta">
+      <div class="vertical-line"></div>
+      <div class="circled-number">02</div>
       <section class="cta__content container">
         <img src="./assets/mobile/image-footer.jpg" alt="" class="cta__content__image" srcset="
           ./assets/mobile/image-footer.jpg   750w,
@@ -102,7 +130,8 @@
         </p>
         <button type="button" class="btn btn--secondary cta__content__btn">Download <span>v1.3</span></button>
       </section>
-    </footer>
+    </footer> 
+    -->
 
   </body>
 </html>
